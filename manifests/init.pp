@@ -7,7 +7,7 @@ class suricata (
 	validate_bool($enabled)
 	validate_string($package_name)
 	validate_string($service_name)
-	validate_string($monitor_interface)
+	validate_string($interface)
 
 	class { 'suricata::prepare': } ->
 	class { 'suricata::install':} ->
