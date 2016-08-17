@@ -1,12 +1,10 @@
 class suricata::params {
 	case $::osfamily {
 		'Debian': {
-			$packageName = 'suricata'
 			$serviceName = 'suricata'
 			$interface = 'eth0'
 	}
 		'RedHat': {
-			$packageName = 'suricata'
 			$serviceName = 'suricata'
 			$interface = 'eth0'
 	}
