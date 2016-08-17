@@ -5,6 +5,11 @@ class suricata::params {
 			$serviceName = 'suricata'
 			$interface = 'eth0'
 	}
+		'RedHat': {
+			$packageName = 'suricata'
+			$serviceName = 'suricata'
+			$interface = 'eth0'
+	}
 	default: {
 		fail("${::operatingsystem} not supported!")
 	}
