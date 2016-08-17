@@ -158,7 +158,7 @@ nfq:
 # af-packet support
 # Set threads to > 1 to use PACKET_FANOUT support
 af-packet:
-  - interface: <% interface -%>
+  - interface: <% @interface -%>
     # Number of receive threads (>1 will enable experimental flow pinned
     # runmode)
     threads: 1
