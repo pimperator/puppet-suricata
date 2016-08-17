@@ -13,6 +13,7 @@ class suricata::prepare {
 	}	
 
 	exec { 'set_promiscuous_mode':
-		command => "/sbin/ifconfig ${suricata::interface} promisc"
+		command => "/sbin/ifconfig ${suricata::interface} promisc",
+		unless  => "/sbin/ifconfig ${suricata::monitor_interface} | grep 'PROMISC'",
 	}
 }
