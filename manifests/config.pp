@@ -3,8 +3,19 @@
 # This class is called from suricata
 #
 class suricata::config {
-	file{ 'logdir':
-		ensure => directory,
+
+File{
+	ensure => @enabled ? {
+		true: present,
+		default: absent,
+		},
+}
+
+file{ 'logdir':
+		ensure => @enabled ? {
+			true: directory,
+			default: absent,
+			},
 		path => '/var/log/suricata',
 	} ~>
 
