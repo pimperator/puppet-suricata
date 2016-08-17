@@ -1,11 +1,14 @@
 class suricata (
+	$enabled      = false,
 	$packageName = $suricata::params::packageName,
 	$serviceName = $suricata::params::serviceName,
 	$interface = $suricata::params::interface,
 ) inherits suricata::params {
-	
-	#include apt
-	
+	validate_bool($enabled)
+	validate_string($package_name)
+	validate_string($service_name)
+	validate_string($monitor_interface)
+
 	class { 'suricata::prepare': } ->
 	class { 'suricata::install':} ->
 	class { 'suricata::config':} ~>
