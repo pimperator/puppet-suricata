@@ -14,6 +14,7 @@ class suricata::prepare {
         ensure => installed,
       },
     }
+  }
 
   exec { 'set_promiscuous_mode':
     command => "/sbin/ifconfig ${suricata::interface} promisc",
