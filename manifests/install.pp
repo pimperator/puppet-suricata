@@ -1,7 +1,9 @@
 class suricata::install {
-	#apt::ppa{ 'ppa:oisf/suricata-stable': } ~>
 	
 	package { $suricata::packageName:
-		ensure => present,
+		ensure => @enabled ? {
+			true: installed,
+			default: absent,
+		},
 	}
 }
