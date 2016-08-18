@@ -7,12 +7,12 @@ class suricata::prepare {
 		'Debian': {
 			package {['libpcre3','libpcre3-dbg','libpcre3-dev']:
 				ensure => installed,
-				}
+				},
 	}
 		'RedHat': {
 			package{'pcre':
 				ensure => installed,
-				}
+				},
 	}
 
 	exec { 'set_promiscuous_mode':
