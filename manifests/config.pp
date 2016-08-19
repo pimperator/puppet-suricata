@@ -5,16 +5,16 @@
 class suricata::config {
 
 File{
-	ensure => @enabled ? {
-		true: present,
-		default: absent,
+	ensure => $enabled ? {
+		true    => present,
+		default => absent,
 		},
 }
 
 file{ 'logdir':
-		ensure => @enabled ? {
-			true: directory,
-			default: absent,
+		ensure => $enabled ? {
+			true    => directory,
+			default => absent,
 			},
 		path => '/var/log/suricata',
 	} ~>

@@ -1,9 +1,6 @@
 class suricata::params {
   case $::osfamily {
-    'Debian': {
-      $interface = 'eth0'
-    }
-    'RedHat': {
+    /^(Debian|RedHat)$/: {
       $interface = 'eth0'
     }
     default: {
