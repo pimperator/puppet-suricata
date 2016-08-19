@@ -2,7 +2,7 @@ class suricata (
   $active    = false,
   $interface = $suricata::params::interface,
 ) inherits suricata::params {
-  validate_bool($enabled)
+  validate_bool($active)
   validate_string($interface)
 
   class { 'suricata::prepare': } ->
