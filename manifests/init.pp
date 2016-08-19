@@ -1,5 +1,5 @@
 class suricata (
-  $enabled      = false,
+  $active    = false,
   $interface = $suricata::params::interface,
 ) inherits suricata::params {
   validate_bool($enabled)

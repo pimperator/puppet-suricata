@@ -5,14 +5,14 @@
 class suricata::config {
 
 File{
-	ensure => $enabled ? {
+	ensure => $::suricata::active ? {
 		true    => present,
 		default => absent,
 		},
 }
 
 file{ 'logdir':
-		ensure => $enabled ? {
+		ensure => $::suricata::active ? {
 			true    => directory,
 			default => absent,
 			},
